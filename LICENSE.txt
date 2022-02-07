@@ -1,1 +1,3 @@
-This git repository contains content made by Mortada M'Rabet, licensed by GNU General Public License (V3). Graet!
+This git repository contains content made by Mortada M'Rabet, licensed by GNU General Public License (V3). Great!
+
+!

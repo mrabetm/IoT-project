@@ -2,9 +2,24 @@
 
 ## Design choices
 
-- Pictures of sketches
+This chapter is divided into 3 subsections:
+- Product requirements
+- Pictures of makeshift prototypes
 - Photos of makeshift prototypes
-- Design choices
+
+### Product requirements:
+
+- Device should look like an actual dice
+- Device should clearly give an indication of battery level
+- Device should show you what has been rolled
+- Device should indicate when it's going to roll
+
+
+[comment]: <> (- Pictures of sketches)
+
+[comment]: <> (- Photos of makeshift prototypes)
+
+[comment]: <> (- Design choices)
 
 ## Design
 
@@ -22,5 +37,5 @@
 
 ## Fabrication Process
 
-Desxcribe what went well and what went wrong
+Describe what went well and what went wrong
 

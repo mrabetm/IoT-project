@@ -3,6 +3,8 @@
 ## Description and screenshots
 
 ## Back-end technology and database
+EERD (Concept):
+
 
 ## Front-end technology
 

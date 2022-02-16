@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/dice_website/dice_website.iml" filepath="$PROJECT_DIR$/dice_website/dice_website.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dice_website_backend/dice_website_backend.iml" filepath="$PROJECT_DIR$/dice_website_backend/dice_website_backend.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/iot-mrabetm.iml" filepath="$PROJECT_DIR$/.idea/iot-mrabetm.iml" />
     </modules>
   </component>

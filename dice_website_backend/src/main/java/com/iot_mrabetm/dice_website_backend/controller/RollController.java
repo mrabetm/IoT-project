@@ -43,11 +43,10 @@ public class RollController {
     }
 
     /**
-     *
      * @param roll
      * @return a response status whether the operation to add a roll was succesfull
      */
-    @PostMapping(value = "/add")
+    @PostMapping
     public ResponseEntity<Roll> createRoll(@RequestBody Roll roll){
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
@@ -61,7 +60,6 @@ public class RollController {
      * @param id
      * @return a response status whether the delete operation was succesfull
      */
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Roll> deleteRoll(@PathVariable int id){
         Roll roll = rollRepository.deleteById(id);

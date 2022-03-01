@@ -4,20 +4,14 @@ import Api from "../Route";
 
 class Body extends Component{
     state = {
-        rolls: [] = useState<any[]>([])
+        rolls: []
     }
 
-    // getAllRolls() {
-    //     Api.get(`/rolls`)
-    //         .then(res => {
-    //             const rolls = res.data;
-    //             this.setState({rolls})
-    //             console.log(res)
-    //         })
-    // }
-
-    constructor() {
-        super();
+    constructor(props: {}) {
+        super(props);
+        this.getRolls()
+    }
+    getRolls(){
         Api.get('/rolls').then(res => {
             console.log(res.data)
             this.setState({rolls: res.data})
@@ -30,7 +24,7 @@ class Body extends Component{
                 <ul>
                     {this.state.rolls
                             .map(roll =>
-                                <li key={roll.id}>{roll.number}</li>
+                                <li key={roll['id']}>you have rolled {roll['number']}</li>
                         )
                     }
                 </ul>

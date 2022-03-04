@@ -12,7 +12,7 @@ class Body extends Component{
         this.getRolls()
     }
     getRolls(){
-        Api.get('/rolls').then(res => {
+        Api.get('/roll').then(res => {
             console.log(res.data)
             this.setState({rolls: res.data})
         })

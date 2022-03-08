@@ -2,10 +2,12 @@
 
 ## Description and screenshots
 
-####RollRepository
+#### RollRepository
 ![img.png](img.png)
 This repository is responsible for the multiple paths used to get or alter data which we fetch from the database
 So if we wanted to get a list of rolls, we simply make a get request to the following url: localhost:8080/roll
+
+### Get 
 
 ## Back-end technology and database
 Along with showcasing which technologies I used for the back-end, 
@@ -15,19 +17,26 @@ Back-end = Spring boot
 
 The reason why I choose spring boot, was mainly because I have some experience with this back-end framework.
 
+Database = MySql database
 
-Database = Mongo DB cluster
+The reason why I choose a mysql database instead of a non-relational database was purely for the reason
+that we are basically saving small amounts of data. By data, I mean the amount of rolls made by the dice.
 
-The reason why I choose a nosql database instead of a relational database was purely for the reason
-that we are basically saving one thing from one object, which is the roll we make when rolling the dice. 
+Also, the web application more secure, as we could also save information about the initial dice.
+This is possible with a nosql database, however we can't relate a roll to this dice. This would mean that we don't know were this
+roll came from, when we have multiple dices.
 
-However, I did consider the fact that there are also benefits to using a relational database.
-For example, when we want to make the web application more secure, we also want to save information about the initial dice.
-This is also possible with a nosql database, but we can't relate a roll to this dice. This would mean that we don't were this
-roll came from, when we have multiple dices. 
+However, I did consider the fact that there are also benefits to using a non-relational database.
+For example, when we want to save large amounts of data regarding the rolls which have been made by the dice it would be useful.
+
+
 
 
 ## Front-end technology
 Front-end framework = React.js
 
+## Libraries
+- Chart.js
+- React-bootstrap
+- Axios
 ## 3rd party API

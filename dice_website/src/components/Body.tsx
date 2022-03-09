@@ -3,17 +3,27 @@ import axios from "axios";
 import Api from "../Route";
 import {Button, Card} from "react-bootstrap";
 
-class Body extends Component{
-    state = {
-        rolls: []
-    }
+class Body extends Component<any, any>{
+    private interval: NodeJS.Timeout | undefined;
 
     constructor(props: {}) {
         super(props);
-        this.getRolls()
+        this.state = {
+            rolls: []
+        }
     }
 
-    getRolls(){
+    componentDidMount() {
+        this.getRolls();
+        this.interval = setInterval(this.getRolls, 1000)
+    }
+
+    componentWillUnmount() {
+        if (this.interval) {
+            clearInterval(this.interval)
+        }
+    }
+    getRolls = () =>{
         Api.get('/roll').then(res => {
             console.log(res.data)
             this.setState({rolls: res.data})
@@ -24,13 +34,13 @@ class Body extends Component{
         return (
             <div id="container">
                 <div id="latestRollContainer">
-                {/*<ul>*/}
-                {/*    {this.state.rolls*/}
-                {/*            .map(roll =>*/}
-                {/*                <li key={roll['id']}>you have rolled {roll['score']}</li>*/}
-                {/*        )*/}
-                {/*    }*/}
-                {/*</ul>*/}
+                <ul>
+                    {this.state.rolls
+                            .map(roll =>
+                                <li key={roll['id']}>you have rolled {roll['score']}</li>
+                        )
+                    }
+                </ul>
 
                 {/*<Card style={{ width: '18rem' }}>*/}
                 {/*    <Card.Img variant="top" src="holder.js/100px180" />*/}

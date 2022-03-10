@@ -4,6 +4,7 @@ import Api from "../Route";
 import {Button, Card} from "react-bootstrap";
 
 class Body extends Component<any, any>{
+
     private interval: NodeJS.Timeout | undefined;
 
     constructor(props: {}) {
@@ -15,7 +16,7 @@ class Body extends Component<any, any>{
 
     componentDidMount() {
         this.getRolls();
-        this.interval = setInterval(this.getRolls, 1000)
+        this.interval = setInterval(this.getRolls, 5000)
     }
 
     componentWillUnmount() {
@@ -24,7 +25,7 @@ class Body extends Component<any, any>{
         }
     }
     getRolls = () =>{
-        Api.get('/roll').then(res => {
+        Api.get('/roll/latest').then(res => {
             console.log(res.data)
             this.setState({rolls: res.data})
         })
@@ -34,13 +35,13 @@ class Body extends Component<any, any>{
         return (
             <div id="container">
                 <div id="latestRollContainer">
-                <ul>
-                    {this.state.rolls
-                            .map(roll =>
-                                <li key={roll['id']}>you have rolled {roll['score']}</li>
-                        )
-                    }
-                </ul>
+                {/*<ul>*/}
+                {/*    {this.state.rolls*/}
+                {/*            .map(roll =>*/}
+                {/*                <li key={roll['id']}>you have rolled {roll['score']}</li>*/}
+                {/*        )*/}
+                {/*    }*/}
+                {/*</ul>*/}
 
                 {/*<Card style={{ width: '18rem' }}>*/}
                 {/*    <Card.Img variant="top" src="holder.js/100px180" />*/}

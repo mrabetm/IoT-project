@@ -33,6 +33,11 @@ public class RollController {
         return rollRepository.findAll();
     }
 
+    @GetMapping(path = "/latest")
+    public Roll getLatestRoll(){
+        return rollRepository.getLatestRoll();
+    }
+
     /**
      * @param id
      * @return a roll by its ID

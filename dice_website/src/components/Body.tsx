@@ -12,11 +12,17 @@ class Body extends Component<any, any>{
         this.state = {
             rolls: []
         }
+        console.log(this.state)
+
     }
 
+    // showPictureBasedOnScore(){
+    //     if (this.state.rolls )
+    // }
+
     componentDidMount() {
-        this.getRolls();
-        this.interval = setInterval(this.getRolls, 5000)
+        this.getLatestRoll();
+        this.interval = setInterval(this.getLatestRoll, 5000)
     }
 
     componentWillUnmount() {
@@ -24,9 +30,8 @@ class Body extends Component<any, any>{
             clearInterval(this.interval)
         }
     }
-    getRolls = () =>{
+    getLatestRoll = () =>{
         Api.get('/roll/latest').then(res => {
-            console.log(res.data)
             this.setState({rolls: res.data})
         })
     }
@@ -43,17 +48,17 @@ class Body extends Component<any, any>{
                 {/*    }*/}
                 {/*</ul>*/}
 
-                {/*<Card style={{ width: '18rem' }}>*/}
-                {/*    <Card.Img variant="top" src="holder.js/100px180" />*/}
-                {/*    <Card.Body>*/}
-                {/*        <Card.Title>Card Title</Card.Title>*/}
-                {/*        <Card.Text>*/}
-                {/*            Some quick example text to build on the card title and make up the bulk of*/}
-                {/*            the card's content.*/}
-                {/*        </Card.Text>*/}
-                {/*        <Button variant="primary">Go somewhere</Button>*/}
-                {/*    </Card.Body>*/}
-                {/*</Card>*/}
+                <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src="holder.js/100px180"/>
+                    <Card.Body>
+                        <Card.Title>You rolled {}
+                        </Card.Title>
+                        <Card.Text>
+                            Some quick example text to build on the card title and make up the bulk of
+                            the card's content.
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
                 </div>
                 <div id="statisticsContainer">
 

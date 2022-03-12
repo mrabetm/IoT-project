@@ -8,10 +8,10 @@ import img3 from "../styles/resources/dice3.png";
 import img4 from "../styles/resources/dice4.png";
 import img5 from "../styles/resources/dice5.png";
 import img6 from "../styles/resources/dice6.gif";
+import ChartComponent from "./ChartComponent";
 
 
 class Body extends Component<any, any>{
-
     private interval: NodeJS.Timeout | undefined;
 
     constructor(props: {}) {
@@ -43,10 +43,8 @@ class Body extends Component<any, any>{
                 return img1;
             case 2:
                 return img2;
-
             case 3:
                 return img3;
-
             case 4:
                 return img4;
 
@@ -59,7 +57,6 @@ class Body extends Component<any, any>{
     }
 
     render(){
-        console.log(this.showPictureBasedOnScore())
         return (
             <div id="container">
                 <div id="latestRollContainer">
@@ -74,7 +71,6 @@ class Body extends Component<any, any>{
                 </Card>
                 </div>
                 <div id="statisticsContainer">
-
                 </div>
             </div>
         )

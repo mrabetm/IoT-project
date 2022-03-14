@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "chart.js";
 import './styles/index.css'
+import DoughnutChart from "./components/DoughnutChart";
 
 ReactDOM.render(
   <React.StrictMode>

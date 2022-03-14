@@ -8,16 +8,18 @@ import img3 from "../styles/resources/dice3.png";
 import img4 from "../styles/resources/dice4.png";
 import img5 from "../styles/resources/dice5.png";
 import img6 from "../styles/resources/dice6.gif";
-import ChartComponent from "./ChartComponent";
+import DoughnutChart from "./DoughnutChart";
+
 
 
 class Body extends Component<any, any>{
     private interval: NodeJS.Timeout | undefined;
 
-    constructor(props: {}) {
+    constructor(props) {
         super(props);
         this.state = {
-            rolls: []
+            latestRoll: [],
+            isLoaded: false,
         }
     }
 
@@ -31,14 +33,18 @@ class Body extends Component<any, any>{
             clearInterval(this.interval)
         }
     }
+
     getLatestRoll = () =>{
         Api.get('/roll/latest').then(res => {
-            this.setState({rolls: res.data})
-        })
+            this.setState({
+                latestRoll: res.data,
+                isLoaded: true,
+            })
+        }).catch(console.error)
     }
 
     showPictureBasedOnScore(): string{
-        switch (this.state.rolls["score"]){
+        switch (this.state.latestRoll["score"]){
             case 1:
                 return img1;
             case 2:
@@ -63,14 +69,15 @@ class Body extends Component<any, any>{
                 <Card style={{ width: '18rem' }}>
                     <Card.Img id="card-img" variant="top" src={this.showPictureBasedOnScore()}/>
                     <Card.Body>
-                        <Card.Title>You rolled {this.state.rolls["score"]}</Card.Title>
+                        <Card.Title>Latest roll</Card.Title>
                         <Card.Text>
-                            You rolled this number on {this.state.rolls["date"]}
+                            You rolled the number {this.state.latestRoll["score"]} on {this.state.latestRoll["date"]}
                         </Card.Text>
                     </Card.Body>
                 </Card>
                 </div>
                 <div id="statisticsContainer">
+                    <DoughnutChart/>
                 </div>
             </div>
         )

@@ -1,13 +1,20 @@
 # Web Application
 
+
+##Architecture diagram
+![img_1.png](img_1.png)
+
 ## Description and screenshots
 
-#### RollRepository
+#### Backend
+
+##### Roll-repository
 ![img.png](img.png)
+
 This repository is responsible for the multiple paths used to get or alter data which we fetch from the database
 So if we wanted to get a list of rolls, we simply make a get request to the following url: localhost:8080/roll
 
-### Get 
+
 
 ## Back-end technology and database
 Along with showcasing which technologies I used for the back-end, 
@@ -28,9 +35,6 @@ roll came from, when we have multiple dices.
 
 However, I did consider the fact that there are also benefits to using a non-relational database.
 For example, when we want to save large amounts of data regarding the rolls which have been made by the dice it would be useful.
-
-
-
 
 ## Front-end technology
 Front-end framework = React.js

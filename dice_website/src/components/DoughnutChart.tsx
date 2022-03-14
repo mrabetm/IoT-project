@@ -16,6 +16,7 @@ export default class DoughnutChart extends Component<any,any>{
 
     componentDidMount() {
         this.getAllRolls()
+
     }
 
     getAllRolls = () =>{
@@ -28,6 +29,11 @@ export default class DoughnutChart extends Component<any,any>{
     }
 
     render() {
+        console.log(this.state.rolls)
+
+        const labelArray = []
+        const dataSetArray = []
+
         const data = {
             labels: this.state.rolls.map((data) => data.score),
             datasets: [

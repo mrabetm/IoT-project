@@ -53,7 +53,6 @@ class Body extends Component<any, any>{
                 return img3;
             case 4:
                 return img4;
-
             case 5:
                 return img5;
             case 6:

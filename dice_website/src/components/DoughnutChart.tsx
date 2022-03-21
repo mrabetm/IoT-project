@@ -13,11 +13,16 @@ export default class DoughnutChart extends Component<any,any>{
             rolls: [],
         }
     }
-
+    /**
+     * List of rolls get injected into the component when its initialize
+     */
     componentDidMount() {
         this.getAllRolls()
     }
-
+    /**
+     * Method is used to fetch all rolls from the api/roll route
+     * and puts them in an array
+     */
     getAllRolls = () =>{
         Api.get('/roll')
             .then(res => {
@@ -28,12 +33,14 @@ export default class DoughnutChart extends Component<any,any>{
     }
 
     render() {
+        const numbers = this.state.rolls.map((data) => data.score).sort((a,b) => a-b)
         const data = {
-            labels: this.state.rolls.map((data) => data.score),
+            //need to find a way to make this load data dynamically
+            labels: ['1','2','3','4','5','6'],
             datasets: [
                 {
                     label: 'Amount of rolls',
-                    data: [12, 19, 3, 5, 2, 3],
+                    data: Array.from(new Set(numbers)).map(val => numbers.filter(v => v === val).length),
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',

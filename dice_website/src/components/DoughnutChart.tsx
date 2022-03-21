@@ -20,6 +20,7 @@ export default class DoughnutChart extends Component<any,any>{
         this.getAllRolls()
     }
     /**
+     * @Author Mortada M'Rabet
      * Method is used to fetch all rolls from the api/roll route
      * and puts them in an array
      */
@@ -62,7 +63,9 @@ export default class DoughnutChart extends Component<any,any>{
             ],
         };
         return (
-            <Doughnut data={data}/>
+            <div id="chart">
+                 <Doughnut data={data}/>
+            </div>
         )
     }
 }

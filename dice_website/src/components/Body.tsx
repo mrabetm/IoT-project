@@ -12,7 +12,7 @@ import DoughnutChart from "./DoughnutChart";
 
 
 
-class Body extends Component<any, any>{
+export default class Body extends Component<any, any>{
     private interval: NodeJS.Timeout | undefined;
 
     constructor(props) {
@@ -34,6 +34,10 @@ class Body extends Component<any, any>{
         }
     }
 
+    /**
+     * @Author Mortada M'Rabet
+     * This method returns the latest roll made from the database
+     */
     getLatestRoll = () =>{
         Api.get('/roll/latest').then(res => {
             this.setState({
@@ -43,6 +47,10 @@ class Body extends Component<any, any>{
         }).catch(console.error)
     }
 
+    /**
+     * @Author Mortada M'Rabet
+     * This method returns a string/url of an image based on the score of the current roll
+     */
     showPictureBasedOnScore(): string{
         switch (this.state.latestRoll["score"]){
             case 1:
@@ -82,5 +90,3 @@ class Body extends Component<any, any>{
         )
     }
 }
-
-export default Body;

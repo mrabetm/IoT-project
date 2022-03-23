@@ -51,12 +51,13 @@ public class RollController {
      * @param roll
      * @return a response status whether the operation to add a roll was succesfull
      */
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<Roll> createRoll(@RequestBody Roll roll){
+        Roll newRoll = rollRepository.save(roll);
         URI location = ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path("/{id}")
-                .buildAndExpand(roll.getId()).toUri();
+                .buildAndExpand(newRoll.getId()).toUri();
 
         return ResponseEntity.created(location).build();
     }

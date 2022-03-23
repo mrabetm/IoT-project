@@ -8,6 +8,8 @@ before_script:
 
 test:
   stage: test
+  tags:
+    - hva
   script:
   - time mkdocs build --site-dir test
   artifacts:
@@ -19,6 +21,8 @@ test:
 
 pages:
   stage: deploy
+  tags:
+    - hva
   variables:
     ENABLED_GIT_REVISION_DATE: "true"
     GIT_DEPTH: 1000

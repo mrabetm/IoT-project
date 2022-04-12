@@ -2,7 +2,10 @@
 
 ## Device description
 
-Describe your device. Don't forget to insert pictures here.
+My device is called the PokeDice, a dice which is I made for my ten-year-old brother
+
+When thinking of a design I considered the following things, I wanted my device to be simple and easy to use for someone at his age.
+In order to do this I made my device consist of an LCD screen where I would display the result of the roll and a button which would allow you to navigate through the device.
 
 ## Code description
 
@@ -72,6 +75,12 @@ void getRollNumber(){
 ```
 
 ## Wiring diagram
+
+Here are some photos of what my breadboard looked like when finishing all the wiring
+
+![img_6.png](img_6.png)
+
+![img_7.png](img_7.png)
 
 Use [fritzing](https://fritzing.org/) or a schematic editor to create a readable wiring diagram.
 

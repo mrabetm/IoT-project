@@ -1,22 +1,32 @@
 package com.iot_mrabetm.dice_website_backend.models;
 
-import org.springframework.data.annotation.Id;
+import com.sun.istack.NotNull;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
 public class Roll {
-
     @Id
+    @NotNull
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", nullable = false)
     public int id;
 
+    @Column(name = "score")
     public int score;
 
+    @Column(name = "roll_date")
     public Date date;
 
     public Roll(int id, int score, Date date) {
         this.id = id;
         this.score = score;
         this.date = date;
+    }
+
+    public Roll() {
+
     }
 
     public int getId() {

@@ -6,6 +6,8 @@
 
 ## Description and screenshots
 
+#### Front-end
+
 #### Backend
 
 ##### Roll-repository
@@ -13,6 +15,8 @@
 
 This repository is responsible for the multiple paths used to get or alter data which we fetch from the database
 So if we wanted to get a list of rolls, we simply make a get request to the following url: localhost:8080/roll
+
+
 
 
 

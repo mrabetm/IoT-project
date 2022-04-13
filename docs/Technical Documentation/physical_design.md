@@ -33,6 +33,7 @@ a circular shape this way it's easier to roll. Lastly I wanted my device to be i
 These concepts were all designed using TinkerCad
 
 Rectangular shaped poke dice
+
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
 

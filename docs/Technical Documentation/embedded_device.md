@@ -73,6 +73,49 @@ void getRollNumber(){
   }
 }
 ```
+Code snippet 3:
+```c++
+//method responsible for setting up prerequisite items to make the loop() method function properly
+void setup() {
+  //Register Button
+  pinMode(buttonPin, INPUT);
+  pinMode(LED_BUILTIN, OUTPUT);
+
+  //Welcome screen when starting app
+  lcd.clear();
+  
+  lcd.begin();
+  lcd.backlight();
+  lcd.print("Welcome to");
+  lcd.setCursor(0,1);
+  lcd.print("PokeDice");
+
+  delay(2000);
+  //Welcome screen part 2
+  lcd.clear();
+  lcd.print("Redirecting to");
+  lcd.setCursor(0,1);
+  lcd.print("Menu");
+  lcd.blink();
+  
+  delay(2000);
+  
+  //Begin establishing wifi connection
+  Serial.begin(115200);
+  WiFi.begin("VRV95174793E9", "3wevVqKDkE4r"); // credentials hva iotroam, Zdc0BLb0r3
+  //VRV95174793E9 3wevVqKDkE4r
+
+  // Keep in while-loop while the device is not connected to your accesspoint.
+  while (WiFi.status() != WL_CONNECTED) {
+    //show this screen while not connected to wifi
+    lcd.clear();
+    lcd.print("Waiting for");
+    lcd.setCursor(0,1);
+    lcd.print("connection");
+    delay(1000); // Waiting for connection...
+  }
+}
+```
 
 ## Wiring diagram
 
@@ -82,23 +125,10 @@ Here are some photos of what my breadboard looked like when finishing all the wi
 
 ![img_7.png](img_7.png)
 
-Use [fritzing](https://fritzing.org/) or a schematic editor to create a readable wiring diagram.
 
-Readable means:
-- No diagonal wires
-- Minimize wire crossovers
-- Wire colors
-  - Black for negative voltage
-  - Red for positive voltage
-  - Every signal a different color, or at least grouped by functionality
-- Annotate parts, add text and values
 
-Possible software:
-- [KiCAD](https://www.kicad.org/)
-- [EasyEDA](https://easyeda.com/)
-- [Fritzing](https://fritzing.org/)
-- [Eagle](https://www.autodesk.com/products/eagle/overview) as part of Fusion360
-
+#### Wiring diagram
+![img_8.png](img_8.png)
 
 
 ## Bill of Materials

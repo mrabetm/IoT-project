@@ -102,3 +102,17 @@ Possible software:
 
 
 ## Bill of Materials
+
+| BILL OF MATERIALS     |                               |              |               |
+|-----------------------|-------------------------------|--------------|---------------|
+| Item to be created:   |                               | PokeDice     |               |
+| Qty to create:        |                               | 1            |               |
+|                       |                               |              |               |
+| COMPONENT             | DESCRIPTION                   | BASE QTY     | COST PER UNIT |
+| Resistor 220Ohm       | Resistor                      | 1            | € 0,05        |
+| LCD Display           | 16*2 karakter met witte tekst | 1            | € 4,00        |
+| Breadboard 830 points | Breadboard 830                | 1            | € 4,00        |
+| Wemos D1 mini V3      | Wemos D1 mini v3              | 1            | € 5,95        |
+| breadboard wires      | wires used in breadboard      | 9            | € 2,50        |
+| Button sensor         |                               | 1            | € 0,10        |
+|                       |                               | TOTAL COST:  | € 36,60       |

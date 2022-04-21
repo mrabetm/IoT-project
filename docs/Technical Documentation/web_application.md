@@ -8,6 +8,26 @@
 
 #### Front-end
 
+##### GetAllRolls
+```typescript jsx
+/**
+ * @Author Mortada M'Rabet
+ * Method is used to fetch all rolls from the api/roll route
+ * and puts them in an array
+ */
+getAllRolls = () =>{
+    Api.get('/roll')
+        .then(res => {
+            this.setState({
+                rolls: res.data
+            })
+        }).catch(console.error)
+}
+```
+Simple get method used to fetch data from the api./roll route
+
+
+
 #### Backend
 
 ##### Roll-repository
@@ -15,9 +35,6 @@
 
 This repository is responsible for the multiple paths used to get or alter data which we fetch from the database
 So if we wanted to get a list of rolls, we simply make a get request to the following url: localhost:8080/roll
-
-
-
 
 
 ## Back-end technology and database
